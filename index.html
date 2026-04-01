@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MC Constructora y Consultora Ambiental S.A.C</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; background: #f4f8f4; scroll-behavior:smooth; }
+    header { background: white; color: #1b5e20; padding: 20px; text-align: center; border-bottom: 3px solid #2e7d32; }
+    header img { max-width: 180px; display:block; margin: 0 auto 10px; }
+    nav { background: #2e7d32; padding: 12px; text-align: center; position: sticky; top:0; z-index:1000; }
+    nav a { color: white; margin: 0 15px; text-decoration: none; font-weight: bold; }
+    nav a:hover { text-decoration: underline; }
+    section { padding: 60px 40px; }
+    h2 { color: #1b5e20; }
+
+    .hero { text-align:center; background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee'); background-size:cover; color:white; padding:100px 20px; }
+    .hero h1 { font-size: 38px; }
+
+    .card { background: white; padding: 20px; margin: 15px 0; border-radius: 12px; box-shadow: 0 3px 10px rgba(0,0,0,0.15); transition: transform 0.3s; }
+    .card:hover { transform: translateY(-5px); }
+
+    .grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(250px,1fr)); gap:20px; }
+
+    footer { background: #1b5e20; color: white; text-align: center; padding: 20px; }
+
+    .btn { background: #25D366; color: white; padding: 12px 18px; border-radius: 8px; text-decoration: none; display:inline-block; margin-top:10px; }
+
+    .whatsapp { position: fixed; bottom: 20px; right: 20px; background: #25D366; color: white; padding: 15px; border-radius: 50%; font-size: 20px; text-align:center; box-shadow: 0 4px 10px rgba(0,0,0,0.3); text-decoration:none; }
+
+    .fade { opacity:0; transform: translateY(20px); transition: all 0.6s ease; }
+    .fade.show { opacity:1; transform: translateY(0); }
+
+  </style>
+</head>
+<body>
+
+<header>
+  <img src="mc.jpg" alt="Logo MC Consultora Ambiental">
+  <h1>MC Constructora y Consultora Ambiental S.A.C</h1>
+</header>
+
+<nav>
+  <a href="#inicio">Inicio</a>
+  <a href="#servicios">Servicios</a>
+  <a href="#nosotros">Nosotros</a>
+  <a href="#proyectos">Proyectos</a>
+  <a href="#contacto">Contacto</a>
+</nav>
+
+<section class="hero" id="inicio">
+  <h1>Ingeniería Ambiental y Construcción con Estándares Profesionales</h1>
+  <p>Brindamos soluciones integrales en consultoría ambiental, ejecución de obras y gestión SSOMA, garantizando cumplimiento normativo, eficiencia operativa y desarrollo sostenible.</p>
+  <a class="btn" href="https://wa.me/51908788531" target="_blank">Solicitar Asesoría</a>
+</section>
+
+<section id="servicios">
+  <h2>Servicios</h2>
+  <div class="grid">
+    <div class="card fade">Estudios de Impacto Ambiental (EIA)</div>
+    <div class="card fade">Supervisión SSOMA</div>
+    <div class="card fade">Monitoreo Ambiental</div>
+    <div class="card fade">Gestión de Residuos Sólidos</div>
+    <div class="card fade">Instrumentos de Gestión Ambiental (IGA)</div>
+    <div class="card fade">Ejecución de Obras Civiles</div>
+  </div>
+</section>
+
+<section id="nosotros">
+  <h2>Nosotros</h2>
+  <p class="fade">Somos una empresa peruana especializada en consultoría ambiental y construcción, comprometida con la calidad, seguridad y sostenibilidad. Contamos con experiencia en campo y asesoría técnica, brindando soluciones eficientes a empresas y proyectos.</p>
+
+  <div class="grid">
+    <div class="card fade">
+      <h3>Misión</h3>
+      <p>Brindar servicios de consultoría ambiental y construcción con altos estándares de calidad, contribuyendo al desarrollo sostenible y al cumplimiento de la normativa vigente, generando valor para nuestros clientes.</p>
+    </div>
+
+    <div class="card fade">
+      <h3>Visión</h3>
+      <p>Ser una empresa líder a nivel regional en servicios ambientales y de construcción, reconocida por su profesionalismo, innovación y compromiso con el medio ambiente.</p>
+    </div>
+  </div>
+</section>
+
+<section id="proyectos">
+  <h2>Proyectos</h2>
+  <div class="grid">
+    <div class="card fade">Proyecto de monitoreo ambiental en campo</div>
+    <div class="card fade">Supervisión SSOMA en obras civiles</div>
+    <div class="card fade">Gestión de residuos en empresas locales</div>
+  </div>
+</section>
+
+<section id="contacto">
+  <h2>Contacto</h2>
+  <p>📍 Amazonas, Perú</p>
+  <p>📞 WhatsApp: +51 908 788 531</p>
+  <p>📧 Email: mc.constructorayconsultora@gmail.com</p>
+  <a class="btn" href="https://wa.me/51908788531" target="_blank">Escríbenos por WhatsApp</a>
+</section>
+
+<footer>
+  <p>© 2026 MC Constructora y Consultora Ambiental S.A.C | Todos los derechos reservados</p>
+</footer>
+
+<a href="https://wa.me/51908788531" class="whatsapp" target="_blank">💬</a>
+
+<script>
+  const elements = document.querySelectorAll('.fade');
+  const showOnScroll = () => {
+    elements.forEach(el => {
+      const rect = el.getBoundingClientRect();
+      if(rect.top < window.innerHeight - 50){ el.classList.add('show'); }
+    });
+  };
+  window.addEventListener('scroll', showOnScroll);
+  showOnScroll();
+</script>
+
+</body>
+</html>

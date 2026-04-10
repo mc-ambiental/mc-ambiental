@@ -3,120 +3,237 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MC Constructora y Consultora Ambiental S.A.C</title>
-  <style>
-    body { font-family: Arial, sans-serif; margin: 0; background: #f4f8f4; scroll-behavior:smooth; }
-    header { background: white; color: #1b5e20; padding: 20px; text-align: center; border-bottom: 3px solid #2e7d32; }
-    header img { max-width: 180px; display:block; margin: 0 auto 10px; }
-    nav { background: #2e7d32; padding: 12px; text-align: center; position: sticky; top:0; z-index:1000; }
-    nav a { color: white; margin: 0 15px; text-decoration: none; font-weight: bold; }
-    nav a:hover { text-decoration: underline; }
-    section { padding: 60px 40px; }
-    h2 { color: #1b5e20; }
-
-    .hero { text-align:center; background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee'); background-size:cover; color:white; padding:100px 20px; }
-    .hero h1 { font-size: 38px; }
-
-    .card { background: white; padding: 20px; margin: 15px 0; border-radius: 12px; box-shadow: 0 3px 10px rgba(0,0,0,0.15); transition: transform 0.3s; }
-    .card:hover { transform: translateY(-5px); }
-
-    .grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(250px,1fr)); gap:20px; }
-
-    footer { background: #1b5e20; color: white; text-align: center; padding: 20px; }
-
-    .btn { background: #25D366; color: white; padding: 12px 18px; border-radius: 8px; text-decoration: none; display:inline-block; margin-top:10px; }
-
-    .whatsapp { position: fixed; bottom: 20px; right: 20px; background: #25D366; color: white; padding: 15px; border-radius: 50%; font-size: 20px; text-align:center; box-shadow: 0 4px 10px rgba(0,0,0,0.3); text-decoration:none; }
-
-    .fade { opacity:0; transform: translateY(20px); transition: all 0.6s ease; }
-    .fade.show { opacity:1; transform: translateY(0); }
-
-  </style>
+  <title>MC Constructora y Consultora Ambiental SAC</title>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
+<body class="bg-gray-50 text-gray-800 font-sans">
 
-<header>
-  <img src="mc.jpg" alt="Logo MC Consultora Ambiental">
-  <h1>MC Constructora y Consultora Ambiental S.A.C</h1>
+<!-- NAVBAR -->
+<header class="bg-white shadow-md fixed w-full z-50">
+  <div class="max-w-7xl mx-auto flex justify-between items-center p-4">
+    <div class="flex items-center gap-3">
+      <img src="logo.jpg" alt="MC Ambiental" class="w-10">
+      <span class="font-bold text-lg">MC Ambiental</span>
+    </div>
+
+    <nav class="hidden md:flex gap-6 font-semibold">
+      <a href="#" class="hover:text-green-700">Inicio</a>
+      <a href="#servicios" class="hover:text-green-700">Servicios</a>
+      <a href="#proyectos" class="hover:text-green-700">Proyectos</a>
+      <a href="#equipo" class="hover:text-green-700">Nosotros</a>
+      <a href="#contacto" class="hover:text-green-700">Contacto</a>
+    </nav>
+
+    <a href="https://wa.me/51908788531" class="bg-green-700 text-white px-4 py-2 rounded-xl">WhatsApp</a>
+  </div>
 </header>
 
-<nav>
-  <a href="#inicio">Inicio</a>
-  <a href="#servicios">Servicios</a>
-  <a href="#nosotros">Nosotros</a>
-  <a href="#proyectos">Proyectos</a>
-  <a href="#contacto">Contacto</a>
-</nav>
-
-<section class="hero" id="inicio">
-  <h1>Ingeniería Ambiental y Construcción con Estándares Profesionales</h1>
-  <p>Brindamos soluciones integrales en consultoría ambiental, ejecución de obras y gestión SSOMA, garantizando cumplimiento normativo, eficiencia operativa y desarrollo sostenible.</p>
-  <a class="btn" href="https://wa.me/51908788531" target="_blank">Solicitar Asesoría</a>
-</section>
-
-<section id="servicios">
-  <h2>Servicios</h2>
-  <div class="grid">
-    <div class="card fade">Estudios de Impacto Ambiental (EIA)</div>
-    <div class="card fade">Supervisión SSOMA</div>
-    <div class="card fade">Monitoreo Ambiental</div>
-    <div class="card fade">Gestión de Residuos Sólidos</div>
-    <div class="card fade">Instrumentos de Gestión Ambiental (IGA)</div>
-    <div class="card fade">Ejecución de Obras Civiles</div>
+<!-- HERO -->
+<section class="relative bg-green-900 text-white pt-28">
+  <div class="absolute inset-0 bg-black opacity-50"></div>
+  <div class="relative p-20 text-center">
+    <img src="logo.jpg" alt="MC Ambiental" class="mx-auto mb-6 w-48">
+    <h1 class="text-5xl font-bold mb-4">Constructora y Consultora Ambiental S.A.C</h1>
+    <p class="text-xl mb-6 max-w-2xl mx-auto">En MC SAC, desarrollamos soluciones ambientales integrales e innovadoras orientadas a promover un crecimiento sostenible y responsable. Contamos con un equipo especializado en ingeniería y gestión ambiental que trabaja con compromiso y eficiencia para preservar nuestros recursos naturales y contribuir al bienestar de las futuras generaciones.</p>
+    <a href="https://wa.me/51908788531" class="bg-green-400 text-black px-10 py-4 rounded-2xl font-semibold shadow-lg">Solicitar asesoría</a>
   </div>
 </section>
 
-<section id="nosotros">
-  <h2>Nosotros</h2>
-  <p class="fade">Somos una empresa peruana especializada en consultoría ambiental y construcción, comprometida con la calidad, seguridad y sostenibilidad. Contamos con experiencia en campo y asesoría técnica, brindando soluciones eficientes a empresas y proyectos.</p>
-
-  <div class="grid">
-    <div class="card fade">
-      <h3>Misión</h3>
-      <p>Brindar servicios de consultoría ambiental y construcción con altos estándares de calidad, contribuyendo al desarrollo sostenible y al cumplimiento de la normativa vigente, generando valor para nuestros clientes.</p>
-    </div>
-
-    <div class="card fade">
-      <h3>Visión</h3>
-      <p>Ser una empresa líder a nivel regional en servicios ambientales y de construcción, reconocida por su profesionalismo, innovación y compromiso con el medio ambiente.</p>
-    </div>
+<!-- SERVICIOS -->
+<section id="servicios" class="p-16">
+  <h2 class="text-4xl font-bold text-center mb-12">Nuestros Servicios Ambientales</h2>
+  <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+    <div class="bg-white p-8 rounded-2xl shadow hover:shadow-xl transition">
+      <h3 class="font-bold text-xl mb-3">MONITOREOS AMBIENTALES</h3>
+<ul class="grid grid-cols-2 gap-y-2 gap-x-6">
+  <li>🍃 Aire</li>
+  <li>🍃 Agua</li>
+  <li>🍃 Suelo</li>
+  <li>🍃 Ruido ambiental</li>
+  <li>🍃 Meteorológico</li>
+  <li>🍃 Ruido ocupacional</li>
+  <li>  </li>
+  <li>  </li>
+  <li>  </li>
+ </ul>
+    <a href="https://wa.me/51908788531" class="bg-green-400 text-black px-10 py-4 rounded-2xl font-semibold shadow-lg">Consultar</a>
+  </div>
+    <div class="bg-white p-8 rounded-2xl shadow hover:shadow-xl transition">
+      <h3 class="font-bold text-xl mb-3">Monitoreos Biológicos</h3>
+<ul class="grid grid-cols-2 gap-y-2 gap-x-6">
+  <li>🍃 Flora</li>
+  <li>🍃 Fauna</li>
+  <li> </li>
+  <li> </li>
+  <li> </li>
+  <li> </li>
+  <li>  </li>
+  <li>  </li>
+  <li>  </li>
+ </ul>
+    <a href="https://wa.me/51908788531" class="bg-green-400 text-black px-10 py-4 rounded-2xl font-semibold shadow-lg">Consultar</a>
+  </div>
+    <div class="bg-white p-12 mx-auto shadow hover:shadow-xl transition w-full">
+      <h3 class="font-bold text-xl mb-4">Instrumentos de Gestión Ambiental</h3>
+  <p>🍃 Informe de Gestión Ambiental (IGA)</p>
+  <p>🍃 Declaración de Adecuación Ambiental (DAA)</p>
+  <p>🍃 Declaración Ambiental de Actividades en Curso (DAAC)</p>
+  <p>🍃 Declaración de Impacto Ambiental (DIA)</p>
+  <p>🍃 Estudio de Impacto Ambiental Semi Detallado (EIAsd)</p>
+  <p>🍃 Estudio de Impacto Ambiental Detallado (EIAd)</p>
+  <p>🍃 Plan de Participación Ciudadana (PPC)</p>
+  <p>🍃 Ficha Técnica Socio Ambiental (FITSA)</p>
+  <p>🍃 Sistema de Información Geográfica</p>
+<p>   </p>
+ <p>   </p>
+  <p>   </p>
+   <p>   </p>
+    <p>   </p>
+     <p>   </p>
+      <p>   </p>
+  <p>   </p>
+  <p>   </p>
+<p>   </p>
+<li>   </li>
+    <a href="https://wa.me/51908788531" class="bg-green-400 text-black px-10 py-4 rounded-2xl font-semibold shadow-lg">Consultar</a>
   </div>
 </section>
 
-<section id="proyectos">
-  <h2>Proyectos</h2>
-  <div class="grid">
-    <div class="card fade">Proyecto de monitoreo ambiental en campo</div>
-    <div class="card fade">Supervisión SSOMA en obras civiles</div>
-    <div class="card fade">Gestión de residuos en empresas locales</div>
+<section id="servicios" class="p-16">
+  <h2 class="text-4xl font-bold text-center mb-12">Nuestros Servicios Civiles</h2>
+  <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+    <div class="bg-white p-8 rounded-2xl shadow hover:shadow-xl transition">
+      <h3 class="font-bold text-xl mb-3">INFRAESTRUCTURA Y CONSTRUCCIÓN</h3>
+<ul class="grid grid-cols-2 gap-y-2 gap-x-6">
+  <li>🧱 Movimiento de suelo</li>
+  <li>🧱 Estructuras de hormigón (remodeladas y encofradas)</li>
+  <li>🧱 Edificaciones Industriales</li>
+  <li>  </li>
+  <li>  </li>
+  <li>  </li>
+  <li>  </li>
+  <li>  </li>
+  <li>  </li>
+ </ul>
+    <a href="https://wa.me/51908788531" class="bg-green-400 text-black px-10 py-4 rounded-2xl font-semibold shadow-lg">Consultar</a>
+  </div>
+    <div class="bg-white p-8 rounded-2xl shadow hover:shadow-xl transition">
+      <h3 class="font-bold text-xl mb-3">PINTURA EN GENERAL</h3>
+<ul class="grid grid-cols-2 gap-y-2 gap-x-6">
+  <li>🫟 Pintura Interior (Látex, látex satinado, satinol)</li>
+  <li>🫟Pintados de fachadas externas (edificios)</li>
+  <li>🫟 Pintura Industrial anticorrosiva</li>
+  <li> </li>
+  <li> </li>
+  <li> </li>
+  <li>  </li>
+  <li>  </li>
+  <li>  </li>
+ </ul>
+    <a href="https://wa.me/51908788531" class="bg-green-400 text-black px-10 py-4 rounded-2xl font-semibold shadow-lg">Consultar</a>
+  </div>
   </div>
 </section>
 
-<section id="contacto">
-  <h2>Contacto</h2>
-  <p>📍 Amazonas, Perú</p>
-  <p>📞 WhatsApp: +51 908 788 531</p>
-  <p>📧 Email: mc.constructorayconsultora@gmail.com</p>
-  <a class="btn" href="https://wa.me/51908788531" target="_blank">Escríbenos por WhatsApp</a>
+<section id="servicios" class="p-16">
+  <h2 class="text-4xl font-bold text-center mb-12">Otros Servicios</h2>
+  <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+    <div class="bg-white p-8 rounded-2xl shadow hover:shadow-xl transition">
+      <h3 class="font-bold text-xl mb-3">IMPLEMENTACIÓN DE SEGURIDAD Y SALUD EN EL TRABAJO</h3>
+<ul class="grid grid-cols-2 gap-y-2 gap-x-6">
+  <li>🦺 Elaboración de planes de contingencia de Preparación y Respuesta a Emergencias.</li>
+  <li>🦺 Desarrollo de matriz de Identificación de Peligros, evaluación y control de riesgos (IPERC).</li>
+  <li>🦺 Elaboración de mapas de riesgos.</li>
+  <li>🦺 Elaboración de procedimientos escrito de trabajo seguro (PETS).</li>
+  <li>  </li>
+  <li>  </li>
+  <li>  </li>
+  <li>  </li>
+  <li>  </li>
+ </ul>
+    <a href="https://wa.me/51908788531" class="bg-green-400 text-black px-10 py-4 rounded-2xl font-semibold shadow-lg">Consultar</a>
+  </div>
+    <div class="bg-white p-8 rounded-2xl shadow hover:shadow-xl transition">
+      <h3 class="font-bold text-xl mb-3">ELABORACIÓN DE PERFIL Y EXPEDIENTES AMBIENTALES Y CIVILES</h3>
+<ul class="grid grid-cols-2 gap-y-2 gap-x-6">
+  <li> </li>
+  <li> </li>
+  <li> </li>
+  <li>  </li>
+  <li>  </li>
+  <li>  </li>
+ </ul>
+    <a href="https://wa.me/51908788531" class="bg-green-400 text-black px-10 py-4 rounded-2xl font-semibold shadow-lg">Consultar</a>
+  </div>
+   <div class="bg-white p-8 rounded-2xl shadow hover:shadow-xl transition">
+      <h3 class="font-bold text-xl mb-3">ALQUILER VEHICULAR</h3>
+<ul class="grid grid-cols-2 gap-y-2 gap-x-6">
+  <li> </li>
+  <li> </li>
+  <li> </li>
+  <li>  </li>
+  <li>  </li>
+  <li>  </li>
+ </ul>
+    <a href="https://wa.me/51908788531" class="bg-green-400 text-black px-10 py-4 rounded-2xl font-semibold shadow-lg">Consultar</a>
+  </div>
+    
+  </div>
+</section>
+  
+  
+<!-- PROYECTOS -->
+<section id="proyectos" class="bg-gray-100 p-16">
+  <h2 class="text-4xl font-bold text-center mb-12">Proyectos Realizados</h2>
+  <div class="grid md:grid-cols-3 gap-6">
+    <img src="obra1.jpg" class="rounded-2xl h-56 w-full object-cover">
+    <img src="obra2.jpg" class="rounded-2xl h-56 w-full object-cover">
+    <img src="obra3.jpg" class="rounded-2xl h-56 w-full object-cover">
+  </div>
 </section>
 
-<footer>
-  <p>© 2026 MC Constructora y Consultora Ambiental S.A.C | Todos los derechos reservados</p>
+<!-- NOSOTROS -->
+<section id="equipo" class="p-16 text-center">
+  <h2 class="text-4xl font-bold mb-6">Sobre Nosotros</h2>
+  <p class="max-w-3xl mx-auto text-lg">Somos una empresa especializada en consultoría ambiental y construcción, comprometidos con el cumplimiento normativo, la sostenibilidad y el desarrollo responsable de proyectos en el Perú.</p>
+<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+<div class="bg-white p-8 rounded-2xl shadow hover:shadow-xl transition">
+  <h3 class="font-bold text-xl mb-3">MISION</h3>
+  <p>Brindar servicios ambientales y de construcción con calidad, seguridad y cumplimiento normativo</p>
+</div>
+<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+  <div class="bg-white p-8 rounded-2xl shadow hover:shadow-xl transition">
+  <h3 class="font-bold text-xl mb-3">VISION</h3>
+  <p>Ser una empresa líder en soluciones ambientales a nivel regional y nacional.</p>
+</div>
+</section>
+  
+<!-- CTA -->
+<section id="contacto" class="bg-green-900 text-white text-center p-16">
+  <h2 class="text-4xl font-bold mb-4">¿Necesitas asesoría ambiental?</h2>
+  <p class="mb-6">Contáctanos y recibe atención inmediata</p>
+  <a href="https://wa.me/51908788531" class="bg-green-400 text-black px-10 py-4 rounded-2xl font-semibold">Hablar por WhatsApp</a>
+</section>
+  <h2 class="text-4xl font-bold mb-4">Email</h2>
+<form action="mailto:mc.constructorayconsultora@gmail.com" method="post" enctype="text/plain" style="max-width:600px;margin:auto;display:flex;flex-direction:column;gap:12px" class="fade">
+<input type="text" name="Nombre" placeholder="Nombre" required style="padding:12px;border-radius:6px;border:1px solid #ccc">
+<input type="email" name="Correo" placeholder="Correo" required style="padding:12px;border-radius:6px;border:1px solid #ccc">
+<textarea name="Mensaje" placeholder="Mensaje" required style="padding:12px;border-radius:6px;border:1px solid #ccc"></textarea>
+<button type="submit" style="background:#1b5e20;color:white;padding:12px;border:none;border-radius:6px">Enviar</button>
+</form>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  
+<a href="https://wa.me/51908788531" target="_blank"
+   class="fixed bottom-5 right-5 bg-green-500 text-white p-4 rounded-full shadow-lg hover:scale-110 transition">
+  <i class="fab fa-whatsapp text-2xl"></i>
+</a>
+  
+<!-- FOOTER -->
+<footer class="bg-black text-white text-center p-8">
+  <p>Correo: mc.constructorayconsultora@gmail.com</p>
+  <p>WhatsApp: +51 908788531</p>
+  <p class="text-sm mt-2">© 2026 MC Constructora y Consultora Ambiental S.A.C - Todos los derechos reservados</p>
 </footer>
-
-<a href="https://wa.me/51908788531" class="whatsapp" target="_blank">💬</a>
-
-<script>
-  const elements = document.querySelectorAll('.fade');
-  const showOnScroll = () => {
-    elements.forEach(el => {
-      const rect = el.getBoundingClientRect();
-      if(rect.top < window.innerHeight - 50){ el.classList.add('show'); }
-    });
-  };
-  window.addEventListener('scroll', showOnScroll);
-  showOnScroll();
-</script>
-
 </body>
 </html>

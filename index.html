@@ -9,47 +9,76 @@
 <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <style>
-/* ===== CARRUSEL ULTRA PREMIUM ===== */
+/* SCROLL */
+html { scroll-behavior: smooth; }
+
+/* NAVBAR */
+#navbar { backdrop-filter: blur(10px); }
+
+/* ANIMACIONES */
+.fade-up {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease;
+}
+.fade-up.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* BOTONES */
+a, button { transition: all 0.3s ease; }
+a:hover, button:hover { transform: translateY(-3px); }
+
+/* HERO */
+.hero-bg {
+  transform: scale(1.1);
+  transition: transform 0.3s ease;
+}
+
+/* ===== CARRUSEL IMPERIO ===== */
 .carousel-item {
   min-width: 60%;
   margin: 0 20px;
+  transform: scale(0.75);
+  opacity: 0.4;
+  filter: blur(4px);
   transition: all 0.7s ease;
-  transform: scale(0.8);
-  opacity: 0.5;
-  filter: blur(3px);
 }
-
 .carousel-item img {
   width: 100%;
   height: 420px;
   object-fit: cover;
-  border-radius: 25px;
-  transition: all 0.7s ease;
+  border-radius: 30px;
 }
-
-/* CENTRO */
 .carousel-item.active {
   transform: scale(1);
   opacity: 1;
   filter: blur(0);
   z-index: 10;
 }
-
-.carousel-item.active img {
-  box-shadow: 0 25px 60px rgba(0,0,0,0.4);
-}
-
-/* LADOS */
 .carousel-item.side {
   transform: scale(0.9);
   opacity: 0.7;
-  filter: blur(1px);
+  filter: blur(1.5px);
 }
+
+/* TEXTO CARRUSEL */
+#carouselText {
+  text-shadow: 0 10px 30px rgba(0,0,0,0.7);
+}
+
+/* FULLSCREEN */
+.fullscreen {
+  position: fixed !important;
+  inset: 0;
+  z-index: 9999;
+  background: black;
+}
+
 </style>
-
 </head>
 
-</head>
 
 <body class="bg-gray-50 text-gray-800 font-sans">
 
@@ -267,12 +296,35 @@
 
 <!-- EXPERIENCIA PREMIUM -->
 <section id="proyectos" class="p-16">
- <h2 class="text-4xl font-bold text-center mb-12">Experiencia</h2>
+  <h2 class="text-4xl font-bold text-center mb-12">Experiencia</h2>
+</section>
 
-  <div class="grid md:grid-cols-3 gap-6">
-    <img src="obra1.jpg" class="rounded-xl">
-    <img src="obra2.jpg" class="rounded-xl">
-    <img src="obra3.jpg" class="rounded-xl">
+<!-- 🔥 CARRUSEL IMPERIO DIGITAL -->
+<section class="p-16 bg-white">
+  <h2 class="text-4xl font-bold text-center mb-12">Galería de Proyectos</h2>
+
+  <div id="carouselWrapper" class="max-w-6xl mx-auto relative overflow-hidden rounded-3xl">
+
+    <div id="bgBlur" class="absolute inset-0 blur-2xl scale-110 opacity-40 transition"></div>
+
+    <div id="carouselTrack" class="flex items-center relative z-10">
+
+      <div class="carousel-item" data-text="Monitoreo Ambiental"><img src="obra3.jpg"></div>
+
+      <div class="carousel-item" data-text="Supervisión SSOMA"><img src="obra1.jpg"></div>
+      <div class="carousel-item" data-text="Obras Civiles"><img src="obra2.jpg"></div>
+      <div class="carousel-item" data-text="Gestión Ambiental"><img src="obra3.jpg"></div>
+
+      <div class="carousel-item" data-text="Supervisión SSOMA"><img src="obra1.jpg"></div>
+
+    </div>
+
+    <div id="carouselText" class="absolute bottom-10 left-10 text-white text-2xl font-bold"></div>
+
+    <div class="absolute bottom-0 left-0 w-full h-1 bg-white/20">
+      <div id="progressBar" class="h-1 bg-green-500 w-0"></div>
+    </div>
+
   </div>
 </section>
 
@@ -342,3 +394,69 @@ window.addEventListener("scroll",()=>{
 
 </body>
 </html>
+
+<script>
+
+/* NAVBAR */
+window.addEventListener("scroll",()=>{
+  document.getElementById("navbar")
+  .classList.toggle("bg-white/80 shadow",window.scrollY>50);
+});
+
+/* PARALLAX */
+window.addEventListener("scroll",()=>{
+  const hero=document.querySelector(".hero-bg");
+  if(hero){
+    hero.style.transform=`scale(1.1) translateY(${window.scrollY*0.2}px)`;
+  }
+});
+
+/* ===== CARRUSEL ===== */
+const track=document.getElementById("carouselTrack");
+const slides=document.querySelectorAll(".carousel-item");
+const bg=document.getElementById("bgBlur");
+const text=document.getElementById("carouselText");
+const progress=document.getElementById("progressBar");
+
+let index=1,total=slides.length,autoTime=4000,timer;
+
+function update(){
+  track.style.transform=`translateX(-${index*60}%)`;
+
+  slides.forEach((s,i)=>{
+    s.classList.remove("active","side");
+    if(i===index){
+      s.classList.add("active");
+      bg.style.backgroundImage=`url(${s.querySelector("img").src})`;
+      text.innerText=s.dataset.text;
+    } else if(i===index-1||i===index+1){
+      s.classList.add("side");
+    }
+  });
+
+  progress.style.transition="none";
+  progress.style.width="0%";
+  setTimeout(()=>{
+    progress.style.transition=`${autoTime}ms linear`;
+    progress.style.width="100%";
+  },50);
+}
+
+function move(n){
+  index+=n;
+  track.style.transition="0.7s";
+  update();
+}
+
+setInterval(()=>move(1),autoTime);
+
+update();
+
+</script>
+
+</body>
+</html>
+
+
+
+

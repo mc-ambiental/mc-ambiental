@@ -8,6 +8,47 @@
 <script src="https://cdn.tailwindcss.com"></script>
 <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+/* ===== CARRUSEL ULTRA PREMIUM ===== */
+.carousel-item {
+  min-width: 60%;
+  margin: 0 20px;
+  transition: all 0.7s ease;
+  transform: scale(0.8);
+  opacity: 0.5;
+  filter: blur(3px);
+}
+
+.carousel-item img {
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+  border-radius: 25px;
+  transition: all 0.7s ease;
+}
+
+/* CENTRO */
+.carousel-item.active {
+  transform: scale(1);
+  opacity: 1;
+  filter: blur(0);
+  z-index: 10;
+}
+
+.carousel-item.active img {
+  box-shadow: 0 25px 60px rgba(0,0,0,0.4);
+}
+
+/* LADOS */
+.carousel-item.side {
+  transform: scale(0.9);
+  opacity: 0.7;
+  filter: blur(1px);
+}
+</style>
+
+</head>
+
 </head>
 
 <body class="bg-gray-50 text-gray-800 font-sans">
@@ -226,31 +267,34 @@
 
 <!-- EXPERIENCIA PREMIUM -->
 <section id="proyectos" class="p-16">
-  <h2 class="text-4xl font-bold text-center mb-12">Experiencia</h2>
+ <h2 class="text-4xl font-bold text-center mb-12">Experiencia</h2>
 
   <div class="grid md:grid-cols-3 gap-6">
+    <img src="obra1.jpg" class="rounded-xl">
+    <img src="obra2.jpg" class="rounded-xl">
+    <img src="obra3.jpg" class="rounded-xl">
+  </div>
+</section>
 
-    <div class="relative group overflow-hidden rounded-2xl">
-      <img src="obra1.jpg" class="h-56 w-full object-cover group-hover:scale-110 transition">
-      <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 flex items-center justify-center text-white">
-        Supervisión SSOMA
-      </div>
+<!-- 🔥 NUEVO CARRUSEL ULTRA PREMIUM -->
+<section class="p-16 bg-white">
+  <h2 class="text-4xl font-bold text-center mb-12">Galería de Proyectos</h2>
+
+  <div class="max-w-6xl mx-auto overflow-hidden">
+    <div id="carouselTrack" class="flex items-center">
+
+      <!-- CLON -->
+      <div class="carousel-item"><img src="obra3.jpg"></div>
+
+      <!-- REALES -->
+      <div class="carousel-item"><img src="obra1.jpg"></div>
+      <div class="carousel-item"><img src="obra2.jpg"></div>
+      <div class="carousel-item"><img src="obra3.jpg"></div>
+
+      <!-- CLON -->
+      <div class="carousel-item"><img src="obra1.jpg"></div>
+
     </div>
-
-    <div class="relative group overflow-hidden rounded-2xl">
-      <img src="obra2.jpg" class="h-56 w-full object-cover group-hover:scale-110 transition">
-      <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 flex items-center justify-center text-white">
-        Obras Civiles
-      </div>
-    </div>
-
-    <div class="relative group overflow-hidden rounded-2xl">
-      <img src="obra3.jpg" class="h-56 w-full object-cover group-hover:scale-110 transition">
-      <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 flex items-center justify-center text-white">
-        Monitoreo Ambiental
-      </div>
-    </div>
-
   </div>
 </section>
 

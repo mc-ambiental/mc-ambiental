@@ -226,128 +226,17 @@
 
 <!-- EXPERIENCIA PREMIUM -->
 <section id="proyectos" class="p-16">
-  <h2 class="text-4xl font-bold text-center mb-12">Experiencia</h2>
-
-  <<div class="coverflow-container">
-        <div class="coverflow" id="coverflow">
-
-            <div class="coverflow-item">
-                <img src="https://picsum.photos/400/500?1">
-                <p>Monitoreo Ambiental</p>
-            </div>
-
-            <div class="coverflow-item">
-                <img src="https://picsum.photos/400/500?2">
-                <p>Supervisión Ambiental</p>
-            </div>
-
-            <div class="coverflow-item">
-                <img src="https://picsum.photos/400/500?3">
-                <p>Gestión de Residuos</p>
-            </div>
-
-            <div class="coverflow-item">
-                <img src="https://picsum.photos/400/500?4">
-                <p>Consultoría Ambiental</p>
-            </div>
-
-        </div>
+  <div class="coverflow-container">
+    <div class="coverflow" id="coverflow">
+      <div class="coverflow-item"><img src="/mnt/data/obra1.jpg"><p>Monitoreo Ambiental</p></div>
+      <div class="coverflow-item"><img src="/mnt/data/obra2.jpg"><p>Supervisión Ambiental</p></div>
+      <div class="coverflow-item"><img src="/mnt/data/obra3.jpg"><p>Gestión de Residuos</p></div>
+      <div class="coverflow-item"><img src="https://picsum.photos/400/500?4"><p>Consultoría Ambiental</p></div>
     </div>
-
+  </div>
 </section>
 
-<style>
-.coverflow-container {
-    perspective: 1200px;
-    overflow: hidden;
-}
-
-.coverflow {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 40px;
-    transform-style: preserve-3d;
-}
-
-.coverflow-item {
-    width: 260px;
-    height: 380px;
-    transition: transform 0.6s, opacity 0.6s;
-    position: relative;
-    cursor: pointer;
-}
-
-.coverflow-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 20px;
-}
-
-.coverflow-item p {
-    position: absolute;
-    bottom: 10px;
-    width: 100%;
-    text-align: center;
-    font-size: 14px;
-}
-
-.coverflow-item.active {
-    transform: scale(1.2) translateZ(150px);
-    z-index: 3;
-}
-
-.coverflow-item.left {
-    transform: rotateY(40deg) translateZ(-100px);
-    opacity: 0.6;
-}
-
-.coverflow-item.right {
-    transform: rotateY(-40deg) translateZ(-100px);
-    opacity: 0.6;
-}
-
-.coverflow-item.hidden {
-    opacity: 0;
-    transform: scale(0.5);
-}
-</style>
-
-<script>
-const items = document.querySelectorAll(".coverflow-item");
-let current = 0;
-
-function updateCoverflow() {
-    items.forEach((item, i) => {
-        item.classList.remove("active","left","right","hidden");
-
-        if(i === current) {
-            item.classList.add("active");
-        } else if(i === current - 1) {
-            item.classList.add("left");
-        } else if(i === current + 1) {
-            item.classList.add("right");
-        } else {
-            item.classList.add("hidden");
-        }
-    });
-}
-
-items.forEach((item, i) => {
-    item.addEventListener("click", () => {
-        current = i;
-        updateCoverflow();
-    });
-});
-
-setInterval(() => {
-    current = (current + 1) % items.length;
-    updateCoverflow();
-}, 4000);
-
-updateCoverflow();
-</script>
+<section id="contacto" class="section reveal">
 
   </div>
 </section>

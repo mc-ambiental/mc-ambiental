@@ -254,6 +254,215 @@
   </div>
 </section>
 
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Carrusel Ambiental</title>
+
+<style>
+
+/* FONDO CORPORATIVO */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #022c22, #064e3b, #0f766e);
+    color: white;
+}
+
+/* CONTENEDOR */
+.carousel-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 80px auto;
+    overflow: hidden;
+    position: relative;
+}
+
+/* TRACK */
+.carousel-track {
+    display: flex;
+    transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* TARJETAS */
+.carousel-item {
+    min-width: 320px;
+    margin: 0 15px;
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+    backdrop-filter: blur(10px);
+    background: rgba(255,255,255,0.05);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* IMAGEN */
+.carousel-item img {
+    width: 100%;
+    height: 420px;
+    object-fit: cover;
+}
+
+/* EFECTO PRO */
+.carousel-item:hover {
+    transform: scale(1.07);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+}
+
+/* TEXTO */
+.carousel-caption {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 25px;
+    background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+}
+
+.carousel-caption h3 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.carousel-caption p {
+    font-size: 13px;
+    opacity: 0.8;
+}
+
+/* BOTONES */
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    border: none;
+    font-size: 28px;
+    cursor: pointer;
+    padding: 12px 16px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.1);
+    color: white;
+    backdrop-filter: blur(10px);
+    transition: 0.3s;
+}
+
+.carousel-btn:hover {
+    background: rgba(255,255,255,0.3);
+}
+
+.prev { left: 10px; }
+.next { right: 10px; }
+
+/* TITULO */
+.section-title {
+    text-align: center;
+    font-size: 28px;
+    font-weight: 600;
+    margin-top: 50px;
+    letter-spacing: 1px;
+}
+
+.section-subtitle {
+    text-align: center;
+    font-size: 14px;
+    opacity: 0.7;
+    margin-bottom: 30px;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="section-title">Nuestros Proyectos Ambientales</div>
+<div class="section-subtitle">Soluciones sostenibles con impacto real</div>
+
+<div class="carousel-container">
+
+    <button class="carousel-btn prev">&#10094;</button>
+
+    <div class="carousel-track" id="carouselTrack">
+
+        <div class="carousel-item">
+            <img src="obra1.jpg">
+            <div class="carousel-caption">
+                <h3>sSUPERVICION SSOMA</h3>
+                <p>Movimiento de suelo</p>
+            </div>
+        </div>
+
+        <div class="carousel-item">
+            <img src="obra2.jpg">
+            <div class="carousel-caption">
+                <h3>OBRAS CIVILES</h3>
+                <p>Construcción de Piscina</p>
+            </div>
+        </div>
+
+        <div class="carousel-item">
+            <img src="obra3.jpg">
+            <div class="carousel-caption">
+                <h3>MONITOREOS AMBIENTALES</h3>
+                <p>Evaluación de calidad de aire, agua y suelo</p>
+            </div>
+        </div>
+
+        <div class="carousel-item">
+            <img src="https://picsum.photos/400/600?green4">
+            <div class="carousel-caption">
+                <h3>Consultoría Ambiental</h3>
+                <p>Asesoría estratégica para proyectos sostenibles</p>
+            </div>
+        </div>
+
+    </div>
+
+    <button class="carousel-btn next">&#10095;</button>
+
+</div>
+
+<script>
+
+const track = document.getElementById("carouselTrack");
+const nextBtn = document.querySelector(".next");
+const prevBtn = document.querySelector(".prev");
+
+let index = 0;
+
+function updateCarousel() {
+    const itemWidth = document.querySelector(".carousel-item").offsetWidth + 30;
+    track.style.transform = `translateX(-${index * itemWidth}px)`;
+}
+
+nextBtn.addEventListener("click", () => {
+    if (index < track.children.length - 1) {
+        index++;
+        updateCarousel();
+    }
+});
+
+prevBtn.addEventListener("click", () => {
+    if (index > 0) {
+        index--;
+        updateCarousel();
+    }
+});
+
+/* AUTO SLIDE */
+setInterval(() => {
+    index = (index + 1) % track.children.length;
+    updateCarousel();
+}, 5000);
+
+</script>
+
+</body>
+</html>
+
+
+  
 <!-- CONTACTO PREMIUM -->
 <section id="contacto" class="p-16 bg-gray-900 text-white text-center">
   <h2 class="text-4xl font-bold mb-6">Contáctanos</h2>
